@@ -1,12 +1,16 @@
+import { Link } from "react-router-dom"
 const LoginPage = () => {
 
     return(
         <>
-        <div className="flex flex-row justify-center items-center">
-     <form action="/home" className="flex w-100 justify-center h-50 flex-col  items-center bg-white rounded-3xl text-black">
-        <input type="text" placeholder="username" className="w-90 mt-2 border-blue-400 border-2 rounded-2xl text-center"/>
-        <input type="text" placeholder="password" className="w-90 mt-2 focus:border-blue-400  border-blue-400 rounded-2xl text-center"></input>
-        <button className="pt-10 bg-blue-400 w-50 h-5  text-center rounded-2xl">Envoyer</button>
+        <div className="flex flex-col justify-center items-center min-h-screen ">
+     <form action="" className="flex flex-col  w-100 justify-center h-70  items-center bg-white rounded-3xl text-black gap-3">
+        <input type="email" placeholder="E-mail" className="w-[90%] border-2 border-blue-400 focus:outline-none rounded  pl-4 text-black"/>
+        <input type="password" placeholder="Password" className="w-[90%] border-2 border-blue-400 focus:outline-none rounded  pl-4 text-black"/>
+        <p className="text-[14px]">Mot de passe Oublie?</p>
+        <button className="bg-blue-400  px-5 rounded-3xl text-white">Se connecter</button>
+        <hr></hr>
+        <Link to="/register"><button className="bg-blue-400 px-5 rounded-3xl text-white">S'inscrire</button></Link>
      </form>
      </div>
         </>
