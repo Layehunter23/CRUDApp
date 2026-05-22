@@ -24,7 +24,7 @@ const RegisterPage = () => {
     return (
         <>
             <h1>Register Page</h1>
-            <div className="flex justify-center items-center min-h-screen">
+            <div className="flex justify-center items-center min-h-screen fixed ml-[30%]">
 
                 <form onSubmit={Submit} className="bg-white flex flex-col justify-center items-center gap-5 w-100 h-80 rounded-2xl">
                     <input type="text" placeholder="Prenom" className="w-[90%] border-2 border-blue-400 focus:outline-none rounded h-7 pl-4 text-black" onChange={(e) => setPrenom(e.target.value)} />
