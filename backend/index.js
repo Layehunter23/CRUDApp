@@ -21,6 +21,12 @@ app.post("/createPatient",(req,res) => {
 
 })
 
+app.get('/patientList',(req,res) => {
+    PatientModel.find({})
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
+
 app.post("/createUser",(req,res) => {
     UserModel.create(req.body)
     .then(users => res.json(users))

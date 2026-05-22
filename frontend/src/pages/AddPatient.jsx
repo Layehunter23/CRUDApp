@@ -1,15 +1,19 @@
-import { useState } from "react"
+import { useState} from "react"
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
+
 const AddPatient = () => {
 
+    const navigate = useNavigate()
     const [name,setName] = useState('')
     const [lastName,setLastName] = useState('')
     const [age , setAge] = useState()
 
     const Submit = (e) => {
+        e.preventDefault()
         alert(`Patient ${name}_${lastName} cree avec succes`)
         axios.post('http://localhost:5001/createPatient',{name,lastName,age})
-        .then(rslt => console.log(rslt))
+        .then(rslt => {console.log(rslt);navigate('/patients')})
         .catch(err => console.log(err))
 
         

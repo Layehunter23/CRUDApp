@@ -1,5 +1,6 @@
 import axios from 'axios'
 import { useState } from 'react'
+import {Navigate, useNavigate} from 'react-router-dom'
 const RegisterPage = () => {
 
     const [prenom, setPrenom] = useState('')
@@ -8,11 +9,14 @@ const RegisterPage = () => {
     const [password, setPasswd] = useState('')
     const [confirm, setConfirm] = useState('')
 
+    const navigate = useNavigate()
+
     const Submit = (e) => {
-       
+        e.preventDefault()
         alert(`Utilisateur ${prenom}_${nom}_${password} cree`)
         axios.post('http://localhost:5001/createUser', { nom, prenom, email, password })
-            .then(rst => console.log(rst))
+            .then(rst => {console.log(rst);
+                navigate('/')})
             .catch(err => console.log(err))
 
            
