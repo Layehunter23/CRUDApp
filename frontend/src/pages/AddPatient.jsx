@@ -2,19 +2,21 @@ import { useState } from "react"
 import axios from 'axios'
 const AddPatient = () => {
 
-    const [name,setName] = useState()
-    const [lastName,setLastName] = useState()
+    const [name,setName] = useState('')
+    const [lastName,setLastName] = useState('')
     const [age , setAge] = useState()
 
     const Submit = (e) => {
-        e.preventDefault()
+        alert(`Patient ${name}_${lastName} cree avec succes`)
         axios.post('http://localhost:5001/createPatient',{name,lastName,age})
         .then(rslt => console.log(rslt))
         .catch(err => console.log(err))
+
+        
     }
     return(
         <>
-        <h1>Creation de Patients</h1>
+            <h1>Creation de Patients</h1>
         <div className="flex justify-center items-center min-h-screen">
            
         <form onSubmit={Submit} className="bg-white flex flex-col justify-center items-center gap-5 w-100 h-80 rounded-2xl">
