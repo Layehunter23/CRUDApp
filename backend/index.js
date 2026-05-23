@@ -13,6 +13,8 @@ app.listen(5001,() => {
 })
 
 mongoose.connect("mongodb://127.0.0.1:27017/CRUD_APP")
+.then(console.log('MongoDB Connecte'))
+.catch(err => console.log(err) )
 
 app.post("/createPatient",(req,res) => {
     PatientModel.create(req.body)
