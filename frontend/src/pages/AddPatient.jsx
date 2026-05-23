@@ -31,7 +31,7 @@ const AddPatient = () => {
             <input type="age" placeholder="Age" className="w-[90%] border-2 border-blue-400 focus:outline-none rounded h-7 pl-4 text-black"
             onChange={e => setAge(e.target.value)}/>
        
-            <button className="bg-blue-400 w-40 h-6 text-white rounded">S'enregistrer</button>
+            <button className="bg-green-400 w-40 h-6 text-white rounded">S'enregistrer</button>
         </form>
         </div>
         

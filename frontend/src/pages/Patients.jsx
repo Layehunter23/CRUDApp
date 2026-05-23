@@ -29,7 +29,7 @@ const [user,setUser] = useState([])
                 <td className="border-4">{u.lastName}</td>
                 <td className="border-4">{u.age}</td>
                 <td className="p-2">
-                    <input type="submit" value="Modify" className="bg-green-500 p-2 rounded text-black m-2"/>
+                    <Link to="/update"/><input type="submit" value="Modify" className="bg-green-500 p-2 rounded text-black m-2"/>
                     <input type="submit" value="Delete" className="bg-red-500 p-2 rounded text-black" />
                 </td>
            </tr>

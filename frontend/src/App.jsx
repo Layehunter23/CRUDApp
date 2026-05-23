@@ -8,6 +8,7 @@ import './App.css'
 import RegisterPage from './pages/RegisterPage'
 import Patients from './pages/Patients'
 import AddPatient from './pages/AddPatient'
+import UpdatePatient from './pages/UpdatePatient'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
           <Route path='/register' element={<RegisterPage></RegisterPage>}></Route>
           <Route path='/patients' element={<Patients></Patients>}></Route>
            <Route path='/addPatient' element={<AddPatient></AddPatient>}></Route>
+           <Route path='/updatePatient' element={<UpdatePatient></UpdatePatient>}></Route>
         </Routes>
     
     </BrowserRouter>
