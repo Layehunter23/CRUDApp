@@ -1,9 +1,11 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useEffect, useState, } from "react"
+import { Link,useNavigate } from "react-router-dom"
 
 const Patients = () => {
 const [user,setUser] = useState([])
+
+const navigate = useNavigate()
 
     useEffect(() => {
         axios.get('http://localhost:5001/patientList')
@@ -14,13 +16,14 @@ const [user,setUser] = useState([])
     const DeletePatient = (id) => {
     axios.delete("http://localhost:5001/deletePatient/"+id)
     .then(users => { console.log(users)
-        alert(`Utilsateur ${users.data.name}_${users.data.lastName} Supprime `)
+        alert(`Utilisateur ${users.data.name}_${users.data.lastName} Supprime `)
     })
     .catch(err => console.log(err))
 }
 
     return(
         <>
+        <h1>Liste des Patients</h1>
         <div className="flex justify-center items-center min-h-screen">
             <Link to="/addPatient" className="mb-60 bg-white text-black w-40 rounded-2xl"><button className="">+ Ajouter Patient</button></Link>
         <table  className="border-4 w-150 ">
@@ -37,7 +40,7 @@ const [user,setUser] = useState([])
                 <td className="border-4">{u.lastName}</td>
                 <td className="border-4">{u.age}</td>
                 <td className="p-2">
-                    <Link to="/update"/><input type="submit" value="Modify" className="bg-green-500 p-2 rounded text-black m-2"/>
+                    <Link to={`/updatePatient/${u._id}`}><input type="submit" value="Modify" className="bg-green-500 p-2 rounded text-black m-2"/></Link>
                     <input type="submit" value="Delete" onClick={() => {DeletePatient(u._id) }} className="bg-red-500 p-2 rounded text-black" />
                 </td>
            </tr>

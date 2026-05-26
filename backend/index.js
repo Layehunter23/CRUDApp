@@ -42,3 +42,18 @@ app.delete("/deletePatient/:id",(req,res) => {
     .then(users => res.json(users))
     .catch(err => res.json(err))
 }) 
+
+app.get('/getPatient/:id',(req,res) => {
+    const id = req.params.id
+    PatientModel.findById(id)
+    .then(user => res.json(user))
+    .catch(err => res.json(err))
+})
+
+app.put('/UpdatePatient/:id',(req,res) =>
+{
+    const id = req.params.id
+    PatientModel.findByIdAndUpdate({_id:id},{name : req.body.name, lastName : req.body.lastName , age: req.body.age})
+    .then(users => res.json(users))
+    .catch(err => res.json(err)) 
+})

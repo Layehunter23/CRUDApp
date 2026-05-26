@@ -17,11 +17,10 @@ function App() {
     <>
     <BrowserRouter>
         <Routes>
-          <Route path='/' element={<LoginPage></LoginPage>}></Route>
-          <Route path='/register' element={<RegisterPage></RegisterPage>}></Route>
-          <Route path='/patients' element={<Patients></Patients>}></Route>
+          
+          <Route path='/' element={<Patients></Patients>}></Route>
            <Route path='/addPatient' element={<AddPatient></AddPatient>}></Route>
-           <Route path='/updatePatient' element={<UpdatePatient></UpdatePatient>}></Route>
+           <Route path='/updatePatient/:id' element={<UpdatePatient></UpdatePatient>}></Route>
         </Routes>
     
     </BrowserRouter>

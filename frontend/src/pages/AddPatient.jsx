@@ -13,7 +13,7 @@ const AddPatient = () => {
         e.preventDefault()
         alert(`Patient ${name}_${lastName} cree avec succes`)
         axios.post('http://localhost:5001/createPatient',{name,lastName,age})
-        .then(rslt => {console.log(rslt);navigate('/patients')})
+        .then(rslt => {console.log(rslt);navigate('/')})
         .catch(err => console.log(err))
 
         
