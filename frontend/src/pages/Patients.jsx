@@ -11,6 +11,14 @@ const [user,setUser] = useState([])
         .catch(err => console.log(err))
     })
 
+    const DeletePatient = (id) => {
+    axios.delete("http://localhost:5001/deletePatient/"+id)
+    .then(users => { console.log(users)
+        alert(`Utilsateur ${users.data.name}_${users.data.lastName} Supprime `)
+    })
+    .catch(err => console.log(err))
+}
+
     return(
         <>
         <div className="flex justify-center items-center min-h-screen">
@@ -30,7 +38,7 @@ const [user,setUser] = useState([])
                 <td className="border-4">{u.age}</td>
                 <td className="p-2">
                     <Link to="/update"/><input type="submit" value="Modify" className="bg-green-500 p-2 rounded text-black m-2"/>
-                    <input type="submit" value="Delete" className="bg-red-500 p-2 rounded text-black" />
+                    <input type="submit" value="Delete" onClick={() => {DeletePatient(u._id) }} className="bg-red-500 p-2 rounded text-black" />
                 </td>
            </tr>
 

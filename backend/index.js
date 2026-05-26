@@ -35,3 +35,10 @@ app.post("/createUser",(req,res) => {
     .catch(err => res.json(err))
 
 })
+
+app.delete("/deletePatient/:id",(req,res) => {
+    const id = req.params.id;
+    PatientModel.findByIdAndDelete({_id: id})
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+}) 
